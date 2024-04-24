@@ -1,6 +1,6 @@
-repo-typst-coins-thesis:
+typst-keio-b2-template:
   type: Repository
-  author: Yuku Kotani
-  title: typst-coins-thesis
-  url: https://github.com/yukukotani/typst-coins-thesis
+  author: daichi-matsumoto
+  title: typst-keio-b2-template
+  url: https://github.com/matsumo0922/typst-keio-b2-template
   date: 2024

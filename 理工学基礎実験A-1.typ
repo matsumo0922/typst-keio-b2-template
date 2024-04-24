@@ -39,7 +39,7 @@
 
 == 脚注
 
-本テンプレートはTypst #footnote[https://typst.app/] 用に作られており、@repo-typst-coins-thesis で配布されている。
+本テンプレートはTypst #footnote[https://typst.app/] 用に作られており、@typst-keio-b2-template で配布されている。
 
 #[
   #set text(lang: "en")
