@@ -2,8 +2,8 @@
 
 #let textL = 1.8em
 #let textM = 1.6em
-#let fontSerif = ("Noto Serif", "Noto Serif CJK JP")
-#let fontSan = ("Noto Sans", "Noto Sans CJK JP")
+#let fontSerif = ("Noto Serif", "Noto Serif JP")
+#let fontSan = ("Noto Sans", "Noto Sans JP")
 
 #let reportInfo(
   title: "",
@@ -140,6 +140,10 @@
 ) = {
   set document(author: author, title: title)
 
+  // start page number
+  set page(numbering: "1", number-align: center)
+  counter(page).update(1)
+
   // Font
   set text(font: fontSerif, lang: "ja")
 
@@ -148,23 +152,24 @@
     if nums.pos().len() > 1 {
       nums.pos().map(str).join(".") + " "
     } else {
-      text(cjk-latin-spacing: none)[第 #str(nums.pos().first()) 章]
+      text(cjk-latin-spacing: none)[#str(nums.pos().first()) ]
       h(1em)
     }
   })
-  show heading: set text(font: fontSan, weight: "medium", lang: "ja")
+  show heading: set text(font: fontSan, weight: "bold", lang: "ja")
   show heading.where(level: 1): it => {
-    pagebreak()
-    set text(size: 1.4em)
-    pad(top: 3em, bottom: 2.5em)[
+    set text(size: 1.2em)
+    pad(top: 1em, bottom: 1em)[
       #it
     ]
   }
   show heading.where(level: 2): it => pad(top: 1em, bottom: 0.6em, it)
+  show heading.where(level: 3): it => pad(top: 0.6em, bottom: 0.6em, it)
 
   // Figure
   show figure: it => pad(y: 1em, it)
   show figure.caption: it => pad(top: 0.6em, it)
+  show figure.where(kind: table): set figure.caption(position: top)
 
   // Outline
   show outline.entry: set text(font: fontSan, lang: "ja")
@@ -173,6 +178,9 @@
     set text(weight: "semibold")
     it
   }
+
+  // Math
+  set math.equation(numbering: "(1)")
 
   align(center)[
     #v(6em)
