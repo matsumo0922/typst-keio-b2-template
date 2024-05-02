@@ -136,6 +136,9 @@
   department: none,
   class: none,
   studentId: none,
+  temperature: "",
+  humidity: "",
+  atomosphericPressure: "",
   body,
 ) = {
   set document(author: author, title: title)
@@ -215,7 +218,7 @@
 
     #v(2em)
 
-    #climateInfo(temperature: "", humidity: "", atomosphericPressure: "")
+    #climateInfo(temperature: temperature, humidity: humidity, atomosphericPressure: atomosphericPressure)
   ]
 
   pagebreak(weak: true)
