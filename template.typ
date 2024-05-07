@@ -171,8 +171,9 @@
 
   // Figure
   show figure: it => pad(y: 1em, it)
-  show figure.caption: it => pad(top: 0.6em, it)
+  show figure.caption: it => pad(top: 0.5em, it)
   show figure.where(kind: table): set figure.caption(position: top)
+  show figure: set block(breakable: true)
 
   // Outline
   show outline.entry: set text(font: fontSan, lang: "ja")
