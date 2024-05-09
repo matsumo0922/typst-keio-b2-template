@@ -2,8 +2,7 @@
 
 #let textL = 1.8em
 #let textM = 1.6em
-#let fontSerif = ("Noto Serif", "Noto Serif JP")
-#let fontSan = ("Noto Sans", "Noto Sans JP")
+#let font = ("Hiragino Kaku Gothic ProN")
 
 #let reportInfo(
   title: "",
@@ -148,7 +147,7 @@
   counter(page).update(1)
 
   // Font
-  set text(font: fontSerif, lang: "ja")
+  set text(font: font, lang: "ja")
 
   // Heading
   set heading(numbering: (..nums) => {
@@ -159,7 +158,7 @@
       h(1em)
     }
   })
-  show heading: set text(font: fontSan, weight: "bold", lang: "ja")
+  show heading: set text(font: font, weight: "bold", lang: "ja")
   show heading.where(level: 1): it => {
     set text(size: 1.2em)
     pad(top: 1em, bottom: 1em)[
@@ -176,7 +175,7 @@
   show figure: set block(breakable: true)
 
   // Outline
-  show outline.entry: set text(font: fontSan, lang: "ja")
+  show outline.entry: set text(font: font, lang: "ja")
   show outline.entry.where(level: 1): it => {
     v(0.2em)
     set text(weight: "semibold")
