@@ -113,11 +113,11 @@
         columns: (0.3fr, 1fr),
         inset: 8pt,
         [気温],
-        [#temperature],
+        [$#temperature degree.c$],
         [湿度],
-        [#humidity],
+        [$#humidity percent$],
         [気圧],
-        [#atomosphericPressure],
+        [$#atomosphericPressure "hPa"$],
       )
     ]
   ]
